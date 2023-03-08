@@ -1,0 +1,56 @@
+const express=require('express');
+const app=express();
+const mongoose=require('mongoose');
+const bodyParser=require('body-parser');
+const cookieParser=require('cookie-parser');
+const session=require('express-session');
+const encoded=bodyParser.urlencoded({extended:true});
+const path=require('path');
+const Registration=require('../models/registration');
+require('../require/connection.js');
+app.use(cookieParser());
+app.use(session({secret:"cookieSecret",resave:true,saveUninitialized:true}));
+app.post('/log_verify',encoded,async (req,res)=>{
+    const user_otp=req.body.log_otp;
+    var message="";
+    if(user_otp===""){
+        message="Enter Your OTP";
+    }
+    else{
+        otp=req.session.log_otp;
+        if(otp===user_otp){
+            var college_email=req.session.log_college_email;
+            req.session.destroy();
+            res.cookie("college_email",college_email);
+            return res.redirect('/profile');
+        }
+        else{
+            message="OTP Not Currect !";
+        }
+    }
+    res.render('log_verify',{
+        style1:[
+            "block",
+            message
+        ]
+    })
+})
+app.get('/log_verify',async (req,res)=>{
+    if(req.session.log_otp){
+        res.render('log_verify',{
+            style1:[
+                "none"
+            ]
+        })
+    }
+    else if(req.session.reg_otp){
+        res.redirect('/reg_verify');
+    }
+    else if(req.cookies.college_email){
+        res.redirect('/profile');
+    }
+    else{
+        res.redirect('/');
+    }
+})
+module.exports=app;

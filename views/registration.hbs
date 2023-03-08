@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="./public/css/index.css">
+	<link rel="stylesheet" href="./public/css/profile.css">
+    <link rel="icon" href="./public/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="header">
+        <div class="header_logo">
+            <img src="./public/images/logo.png" alt="Logo">
+        </div>
+        <div class="header_name">
+            <h1>অখিল ভাৰতীয় বিদ্যাৰ্থী পৰিষদ</h1>
+        </div>
+    </div>
+    <p></p>
+    <div class="login_div">
+		<div class="login_div1">
+			<h1>School Registration </h1>
+			<form action="/registration" method="post">
+				<p class="logp">Enter School Name</p>
+				<input type="text" value="{{lookup input1 0}}" name="user_name" placeholder="User Name" class="logint">
+				<p class="logp">Enter Your Email ID</p>
+				<input type="email" value="{{lookup input1 1}}" name="user_email" placeholder="User Email ID" class="logint"><br><br>
+                <p class="logp">Enter Your Phone Number </p>
+				<input type="text" value="{{lookup input1 2}}" name="user_phone" placeholder="User Phone Number" class="logint"><br><br>
+                <p class="logp">Enter Your Password</p>
+				<input type="password" value="{{lookup input1 3}}" name="user_pass" placeholder="User Password" class="logint" ondblclick="loginputfun1()"><br><br>
+				<button type="submit"><i class="fa fa-sign-in"></i>Registration !</button>
+				<p class="logerror" style="display: {{lookup style1 0}}">{{lookup style1 1}}</p>
+			</form>
+            <a href="/">Already Have Account !</a>
+		</div>
+	</div>
+    <script src="./public/js/index.js"></script>
+</body>
+</html>

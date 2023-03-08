@@ -1,0 +1,181 @@
+body{
+    background-color: #351e29;
+}
+.header {
+    display: flex;
+    width: 100%;
+    border:2px solid white;
+    background-color: #29132E;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row;
+    border-radius: 20px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  .header_logo {
+    width: 40%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .header_logo img {
+      max-height: 100px;
+      filter: brightness(300%);
+  }
+  
+  .header_name {
+      width: 60%;
+      text-align: center;
+      font-size: 13px;
+      color: white;
+      word-wrap: break-word;
+  }
+  .college_name{
+      color: white;
+      font-size: 18px;
+      font-family: 'Courier New', Courier, monospace;
+  }
+  .form_1{
+	display: flex;
+	flex-direction: row;
+	flex-flow: row;
+	text-align: center;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	word-wrap: break-word;
+	border:2px solid white;
+	border-radius: 10px;
+	background: #2A0435;
+	margin-top: 20px;
+	text-align: center;
+}
+.form_1_1{
+	display: flex;
+	flex-direction: row;
+	flex-flow: row;
+	text-align: center;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	word-wrap: break-word;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.form_1_div_2{
+	background: #111E23;
+	width: 50%;
+	margin: 20px;
+	word-wrap: break-word;
+	border-radius: 10px;
+	border:1px solid white;
+}
+.form_1_input{
+	width: 80%;
+	text-align: center;
+	background: transparent;
+	border:2px solid white;
+	font-size:17px;
+	color:white;
+	font-family: "Times New Roman",sans-serif;
+	margin-bottom: 10px;
+    border-radius: 20px;
+}
+.form_1_p{
+	color:white;
+	font-size: 15px;
+	font-family: "Sofia", sans-serif;
+	letter-spacing: 2px;
+}
+.form_1_select{
+	width: 80%;
+	text-align: center;
+	background: #232d3d;
+	color: white;
+	font-size: 17px;
+	font-family: "Times New Roman",sans-serif;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.form_1_div_3{
+    width: 50%;
+}
+.form_1_textarea{
+    width: 90%;
+    resize: none;
+    min-height: 120px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border:2px solid white;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: white;
+    font-size: 16px;
+}
+.form_1_btn{
+	width: 30%;
+	border-radius: 20px;
+	font-size: 17px;
+	font-family: cursive;
+	cursor: pointer;
+	background: #28292b ;
+	color:white;
+	border:2px solid white;
+	letter-spacing: 3px;
+}
+.logout{
+    text-decoration: none;
+    border: 2px solid white;
+    font-size: 18px;
+    color: white;
+    width: 20%;
+}
+.error{
+    font-size: 23px;
+    word-spacing: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    color:red;
+    border-bottom: 2px solid white;
+    width: 100%;
+}
+  @media only screen and (max-width: 700px) {
+	.header
+	{
+		flex-direction: column;
+	}
+    .header_logo{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .header_name{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .form_1{
+        flex-direction: column;
+    }
+    .form_1_div_2{
+        width: 90%;
+    }
+    .form_1_textarea{
+        width: 80%;
+    }
+    .header_name{
+        width: 90%;
+        font-size: 10px;
+    }
+    .form_1_btn{
+        width:80%;
+    }
+    .logout{
+        margin-bottom: 10px;
+    }
+}

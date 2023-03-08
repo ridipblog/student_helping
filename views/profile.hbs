@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="./public/css/profile.css">
+    <link rel="icon" href="./public/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_logo">
+            <img src="./public/images/logo.png" alt="Logo">
+        </div>
+        <div class="header_name">
+            <h1>অখিল ভাৰতীয় বিদ্যাৰ্থী পৰিষদ</h1>
+        </div>
+    </div>
+    <p></p>
+    <div class="header">
+        <h1 class="college_name">no name of the college  </h1>
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+    <form action="/profile" method="post">
+		<div class="form_1">
+			<div class="form_1_div_2">
+				<p class="form_1_p">Enter Your Student Name</p>
+				<input type="text" name="student_name" value="{{lookup sendData 0}}" placeholder="Student Name" class="form_1_input">
+			</div>
+			<div class="form_1_div_2">
+				<p class="form_1_p">Enter Your Phone Number</p>
+				<input type="text" name="phone_no" value="{{lookup sendData 1}}" placeholder="Phone Number" class="form_1_input">
+			</div>
+		</div>
+        <div class="form_1">
+			<div class="form_1_div_2">
+				<p class="form_1_p">Enter Your Student Email</p>
+				<input type="text" name="student_email" value="{{lookup sendData 2}}" placeholder="Student Email ID" class="form_1_input">
+			</div>
+			<div class="form_1_div_2">
+				<p class="form_1_p">Enter Your Parents Name</p>
+				<input type="text" name="parents_name" value="{{lookup sendData 3}}" placeholder="Parents Name" class="form_1_input">
+			</div>
+		</div>
+        <div class="form_1">
+            <div class="form_1_div_2">
+                <p class="form_1_p">Select Student CLass </p>
+                <input type="text" name="class" value="{{lookup sendData 4}}" placeholder="Student Class" class="form_1_input">
+            </div>
+            <div class="form_1_div_2">
+				<p class="form_1_p">Select Your Contact Type</p>
+				<select name="contact" id="contact" class="form_1_select">
+					<option value="Select">Select</option>
+					<option value="Complain">Complain</option>
+					<option value="Suggetion">Suggetion</option>
+					<option value="Help">Help</option>
+				</select>
+			</div>
+        </div>
+        <div class="form_1">
+            <div class="form_1_div_2 form_1_div_3">
+                <p class="form_1_p">Enter Student Address</p>
+                <textarea name="address" class="form_1_textarea" >
+                    {{lookup sendData 5}}
+                </textarea>
+            </div>
+        </div>
+        <div class="form_1">
+            <div class="form_1_div_2 form_1_div_3">
+                <p class="form_1_p">Enter Stuent Reason</p>
+                <textarea name="reason" class="form_1_textarea" >
+                    {{lookup sendData 6}}
+                </textarea>
+            </div>
+        </div>
+        <div class="form_1_1">
+			<button type="submit" class="form_1_btn"><i class="fa fa-arrow-right">Submit Reason</i></button>
+		</div>
+        <div class="form_1_1">
+            <p class="error" style="display: {{lookup style1 0}}">{{lookup style1 1}}</p>
+        </div>
+    </form>
+</body>
+
+</html>
