@@ -20,8 +20,10 @@ app.post('/log_verify',encoded,async (req,res)=>{
         otp=req.session.log_otp;
         if(otp===user_otp){
             var college_email=req.session.log_college_email;
+            var college_name=req.session.log_college_name;
             req.session.destroy();
             res.cookie("college_email",college_email);
+            res.cookie("college_name",college_name);
             return res.redirect('/profile');
         }
         else{

@@ -40,6 +40,7 @@ app.post('/',encoded,async (req,res)=>{
                 const check=await mailSender(college_data[0].User_Email,text_otp);
                 if(check){
                     req.session.log_college_email=data[0];
+                    req.session.log_college_name=college_data[0].User_Name;
                     req.session.log_otp=text_otp;
                     return res.redirect('/log_verify');
                 }

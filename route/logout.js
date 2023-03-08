@@ -16,6 +16,7 @@ app.get('/logout',async(req,res)=>{
     if(req.cookies.college_email)
 	{
 		res.clearCookie("college_email");
+        res.clearCookie("college_name");
 		return res.redirect("/");
 	}
     else if(req.session.reg_otp){

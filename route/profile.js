@@ -26,7 +26,8 @@ app.get('/profile',async(req,res)=>{
         res.render('profile',{
             style1:[
                 "none",
-            ]
+            ],
+            college_name:req.cookies.college_name
         });
     }
     else{
@@ -67,7 +68,8 @@ app.post('/profile',encoded,async(req,res)=>{
             });
             const check_email=await mailSender(data[2],"Student Query Submited !","<h1>Thanks For Contact With Your Query !<h1>");
             if(check_email){
-                const check_email_1=await mailSender(to_mail,"Query Information !","<h1>A New Student Query Add !<h1>");
+                var body="<h1>A New Student Query Add From "+req.cookies.college_name+"<h1>";
+                const check_email_1=await mailSender(to_mail,"Query Information !",body);
                 if(check_email_1){
                     const save_data=await save_reason.save();
                     message="Stuent Query Submited !";
@@ -92,7 +94,8 @@ app.post('/profile',encoded,async(req,res)=>{
         style1:[
             "block",
             message
-        ]
+        ],
+        college_name:req.cookies.college_name
     });
 });
 const mailSender= async (reciver,subject,message) =>{
